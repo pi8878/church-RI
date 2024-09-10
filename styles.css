@@ -8,83 +8,99 @@ body {
     font-family: 'Arial', sans-serif;
     overflow: hidden;
     flex-direction: column;
-  }
+}
   
-  .container {
+.container {
     text-align: center;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 2.5em;
     font-weight: bold;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     background: linear-gradient(90deg, red, yellow, green, blue, orange);
     -webkit-background-clip: text;
     color: transparent;
     animation: colorChange 5s infinite;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Improves visibility */
-  }
-  
-  @keyframes colorChange {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes colorChange {
     0% { background-position: 0%; }
     100% { background-position: 100%; }
-  }
+}
   
-  .scene {
+.scene {
     width: 600px;
-    height: 600px;
+    height: 400px;
     perspective: 1200px;
     margin: 0 auto;
-  }
+    margin-top: 60px;
+}
   
-  .carousel {
+.carousel {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
     animation: rotate 15s infinite linear;
-  }
+}
   
-  .card {
-    width: 180px; /* Increased card size */
-    height: 120px; /* Increased card size */
+.card {
+    width: 180px;
+    height: 120px;
     position: absolute;
     transform-style: preserve-3d;
     background-size: cover;
     background-position: center;
     opacity: 0.9;
-  }
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Flag URLs */
+.card:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg'); }
+.card:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg'); }
+.card:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg'); }
+.card:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone.svg'); }
+.card:nth-child(5) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Ivory_Coast.svg'); }
+.card:nth-child(6) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg'); }
+.card:nth-child(7) { background-image: url('https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg'); }
+.card:nth-child(8) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg'); }
+.card:nth-child(9) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg'); }
+.card:nth-child(10) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg'); }
+.card:nth-child(11) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo.svg'); }
+.card:nth-child(12) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda.svg'); }
+.card:nth-child(13) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia.svg'); }
+.card:nth-child(14) { background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg'); }
+.card:nth-child(15) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg'); }
+.card:nth-child(16) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg'); }
+.card:nth-child(17) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso.svg'); }
   
-  /* African Flag URLs */
-  .card:nth-child(1) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg'); }
-  .card:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/19/Flag_of_Ghana.svg'); }
-  .card:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/79/Flag_of_Nigeria.svg'); }
-  .card:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/68/Flag_of_Togo.svg'); }
-  .card:nth-child(5) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Rwanda.svg'); }
-  .card:nth-child(6) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Flag_of_Liberia.svg'); }
-  .card:nth-child(7) { background-image: url('https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg'); }
-  .card:nth-child(8) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Flag_of_Cameroon.svg'); }
-  .card:nth-child(9) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg'); }
-  .card:nth-child(10) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg'); }
-  
-  /* Positioning the cards in a circular formation with larger translateZ for better spacing */
-  .card:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
-  .card:nth-child(2) { transform: rotateY(36deg) translateZ(300px); }
-  .card:nth-child(3) { transform: rotateY(72deg) translateZ(300px); }
-  .card:nth-child(4) { transform: rotateY(108deg) translateZ(300px); }
-  .card:nth-child(5) { transform: rotateY(144deg) translateZ(300px); }
-  .card:nth-child(6) { transform: rotateY(180deg) translateZ(300px); }
-  .card:nth-child(7) { transform: rotateY(216deg) translateZ(300px); }
-  .card:nth-child(8) { transform: rotateY(252deg) translateZ(300px); }
-  .card:nth-child(9) { transform: rotateY(288deg) translateZ(300px); }
-  .card:nth-child(10) { transform: rotateY(324deg) translateZ(300px); }
-  
-  @keyframes rotate {
+/* Positioning the cards in a circular horizontal formation */
+.card:nth-child(1) { transform: rotateY(0deg) translateX(300px); }
+.card:nth-child(2) { transform: rotateY(22.5deg) translateX(300px); }
+.card:nth-child(3) { transform: rotateY(45deg) translateX(300px); }
+.card:nth-child(4) { transform: rotateY(67.5deg) translateX(300px); }
+.card:nth-child(5) { transform: rotateY(90deg) translateX(300px); }
+.card:nth-child(6) { transform: rotateY(112.5deg) translateX(300px); }
+.card:nth-child(7) { transform: rotateY(135deg) translateX(300px); }
+.card:nth-child(8) { transform: rotateY(157.5deg) translateX(300px); }
+.card:nth-child(9) { transform: rotateY(180deg) translateX(300px); }
+.card:nth-child(10) { transform: rotateY(202.5deg) translateX(300px); }
+.card:nth-child(11) { transform: rotateY(225deg) translateX(300px); }
+.card:nth-child(12) { transform: rotateY(247.5deg) translateX(300px); }
+.card:nth-child(13) { transform: rotateY(270deg) translateX(300px); }
+.card:nth-child(14) { transform: rotateY(292.5deg) translateX(300px); }
+.card:nth-child(15) { transform: rotateY(315deg) translateX(300px); }
+.card:nth-child(16) { transform: rotateY(337.5deg) translateX(300px); }
+.card:nth-child(17) {transform: rotateY(360deg) translateX(300px); }
+
+@keyframes rotate {
     from {
-      transform: rotateY(0deg);
+        transform: rotateY(0deg);
     }
     to {
-      transform: rotateY(360deg);
+        transform: rotateY(360deg);
     }
-  }
-  
+}
