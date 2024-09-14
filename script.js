@@ -193,3 +193,60 @@ window.addEventListener('click', function(event) {
     modal.style.display = 'none';
   }
 });
+
+
+// Get the carousel and modals
+const carousel = document.querySelector('.carousel');
+const modals = document.querySelectorAll('.modal');
+const closeButtons = document.querySelectorAll('.close');
+const cards = document.querySelectorAll('.card');
+
+// Open modal and stop rotation
+cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        document.getElementById('modal-' + (index + 1)).style.display = 'flex';
+        carousel.style.animationPlayState = 'paused'; // Pause rotation
+    });
+});
+
+// Close modal and resume rotation
+closeButtons.forEach(closeButton => {
+    closeButton.addEventListener('click', () => {
+        closeButton.closest('.modal').style.display = 'none';
+        carousel.style.animationPlayState = 'running'; // Resume rotation
+    });
+});
+
+// Close modal when clicking outside modal content
+modals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            carousel.style.animationPlayState = 'running'; // Resume rotation
+        }
+    });
+});
+
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const music = document.getElementById('background-music');
+//   music.play().catch(error => {
+//       console.error("Error playing music:", error);
+//       // Handle auto-play restrictions in some browsers
+//   });
+// });
+
+
+const music = document.getElementById('background-music');
+const musicControlButton = document.getElementById('music-control');
+
+musicControlButton.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        musicControlButton.textContent = "Pause Music";
+    } else {
+        music.pause();
+        musicControlButton.textContent = "Play Music";
+    }
+});
+
