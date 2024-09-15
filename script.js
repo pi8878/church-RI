@@ -66,7 +66,7 @@ const countryData = {
   },
 
   'india': {
-    name: 'South Africa',
+    name: 'India',
     religion: 'Christianity accounts for about 34% of the population.',
     christianityEntry: 'Christianity entered via French missionaries during the colonial period.',
     uniqueFeatures: 'Attire: Pagnes, a traditional wrap cloth. Food: Alloco (fried plantains).',
@@ -157,6 +157,24 @@ const countryData = {
 
   'burkina-faso': {
     name: 'Burkina Faso',
+    religion: 'Christianity accounts for about 34% of the population.',
+    christianityEntry: 'Christianity entered via French missionaries during the colonial period.',
+    uniqueFeatures: 'Attire: Pagnes, a traditional wrap cloth. Food: Alloco (fried plantains).',
+    funFacts: 'Ivory Coast is the world’s largest producer of cocoa.',
+    culture: 'Ivorian culture reflects both its diverse ethnic makeup and its colonial history.'
+  },
+
+  'south-africa': {
+    name: 'South Africa',
+    religion: 'Christianity accounts for about 34% of the population.',
+    christianityEntry: 'Christianity entered via French missionaries during the colonial period.',
+    uniqueFeatures: 'Attire: Pagnes, a traditional wrap cloth. Food: Alloco (fried plantains).',
+    funFacts: 'Ivory Coast is the world’s largest producer of cocoa.',
+    culture: 'Ivorian culture reflects both its diverse ethnic makeup and its colonial history.'
+  },
+
+  'congo': {
+    name: 'Congo',
     religion: 'Christianity accounts for about 34% of the population.',
     christianityEntry: 'Christianity entered via French missionaries during the colonial period.',
     uniqueFeatures: 'Attire: Pagnes, a traditional wrap cloth. Food: Alloco (fried plantains).',

@@ -16,9 +16,9 @@ body {
 }
 
 .title {
-    font-size: 3.5em;
+    font-size: 3.7em;
     font-weight: bold;
-    margin-bottom: 60px;
+    margin-bottom: 100px; /*initially had 60px*/
     background: linear-gradient(90deg, red, yellow, green, blue, orange);
     -webkit-background-clip: text;
     color: transparent;
@@ -33,10 +33,10 @@ body {
 
 .scene {
     width: 600px;
-    height: 400px;
+    height: 300px; /*had 400px*/
     perspective: 1200px;
     margin: 0 auto;
-    margin-top: 60px;
+    /* margin-top: 60px; */
 }
 
 .carousel {
@@ -44,18 +44,20 @@ body {
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    animation: rotate 30s infinite linear;
+    animation: rotate 50s infinite linear;
+    transform-origin: center center;
+    /* transform: translateZ(-225px); */
 }
 
-/* Paused rotation */   
+/* Paused rotation   
 .carousel.paused {
     animation-play-state: paused;
-}
+} */
 
 
 .card {
-    width: 160px;
-    height: 100px;
+    width: 140px; /*had 160*/
+    height: 100px; /*had 100*/
     position: absolute;
     transform-style: preserve-3d;
     background-size: cover;
@@ -64,6 +66,32 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+.country-name {
+    font-size: 0.9em;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparent background */
+    padding: 5px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card:hover .country-name {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Flag URLs */
@@ -71,7 +99,7 @@ body {
 .card:nth-child(2) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/Flag_of_Zimbabwe.svg'); }
 .card:nth-child(3) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg'); }
 .card:nth-child(4) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/17/Flag_of_Sierra_Leone.svg'); }
-.card:nth-child(5) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Cote_d%27Ivoire.svg'); }
+.card:nth-child(5) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/1200px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png'); }
 .card:nth-child(6) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Kenya.svg'); }
 .card:nth-child(7) { background-image: url('https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg'); }
 .card:nth-child(8) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/06/Flag_of_Zambia.svg'); }
@@ -84,25 +112,29 @@ body {
 .card:nth-child(15) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Jamaica.svg'); }
 .card:nth-child(16) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/Flag_of_Uganda.svg'); }
 .card:nth-child(17) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Flag_of_Burkina_Faso.svg'); }
+.card:nth-child(18) { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg'); }
+.card:nth-child(19) { background-image: url('https://s.yimg.com/zb/imgv1/289df0b3-a2c8-3dde-9375-c93f4baaafd8/t_500x300'); }
 
 /* Positions to prevent overlapping */
 .card:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-.card:nth-child(2) { transform: rotateY(21.18deg) translateZ(400px); }
-.card:nth-child(3) { transform: rotateY(42.36deg) translateZ(400px); }
-.card:nth-child(4) { transform: rotateY(63.54deg) translateZ(400px); }
-.card:nth-child(5) { transform: rotateY(84.72deg) translateZ(400px); }
-.card:nth-child(6) { transform: rotateY(105.9deg) translateZ(400px); }
-.card:nth-child(7) { transform: rotateY(127.08deg) translateZ(400px); }
-.card:nth-child(8) { transform: rotateY(148.26deg) translateZ(400px); }
-.card:nth-child(9) { transform: rotateY(169.44deg) translateZ(400px); }
-.card:nth-child(10) { transform: rotateY(190.62deg) translateZ(400px); }
-.card:nth-child(11) { transform: rotateY(211.8deg) translateZ(400px); }
-.card:nth-child(12) { transform: rotateY(232.98deg) translateZ(400px); }
-.card:nth-child(13) { transform: rotateY(254.16deg) translateZ(400px); }
-.card:nth-child(14) { transform: rotateY(275.34deg) translateZ(400px); }
-.card:nth-child(15) { transform: rotateY(296.52deg) translateZ(400px); }
-.card:nth-child(16) { transform: rotateY(317.7deg) translateZ(400px); }
-.card:nth-child(17) { transform: rotateY(338.88deg) translateZ(400px); }
+.card:nth-child(2) { transform: rotateY(18.95deg) translateZ(400px); }
+.card:nth-child(3) { transform: rotateY(37.9deg) translateZ(400px); }
+.card:nth-child(4) { transform: rotateY(56.85deg) translateZ(400px); }
+.card:nth-child(5) { transform: rotateY(75.8deg) translateZ(400px); }
+.card:nth-child(6) { transform: rotateY(94.75deg) translateZ(400px); }
+.card:nth-child(7) { transform: rotateY(113.7deg) translateZ(400px); }
+.card:nth-child(8) { transform: rotateY(132.65deg) translateZ(400px); }
+.card:nth-child(9) { transform: rotateY(151.6deg) translateZ(400px); }
+.card:nth-child(10) { transform: rotateY(170.55deg) translateZ(400px); }
+.card:nth-child(11) { transform: rotateY(189.5deg) translateZ(400px); }
+.card:nth-child(12) { transform: rotateY(208.45deg) translateZ(400px); }
+.card:nth-child(13) { transform: rotateY(227.4deg) translateZ(400px); }
+.card:nth-child(14) { transform: rotateY(246.35deg) translateZ(400px); }
+.card:nth-child(15) { transform: rotateY(265.3deg) translateZ(400px); }
+.card:nth-child(16) { transform: rotateY(284.25deg) translateZ(400px); }
+.card:nth-child(17) { transform: rotateY(303.2deg) translateZ(400px); }
+.card:nth-child(18) { transform: rotateY(322.15deg) translateZ(400px); }
+.card:nth-child(19) { transform: rotateY(341.1deg) translateZ(400px); }
 
 @keyframes rotate {
     from {
@@ -171,3 +203,6 @@ body {
     background-color: #004845;
     box-shadow: none;
 }
+
+
+
